@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org"
+       xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+	<title>ТвоеРасписание</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" media="all" href="/css/tables.css" th:href="@{/css/tables.css}" />
+
+</head>
+<body>
+<form th:action="@{/logout}" method="post">
+    <button sec:authorize="isAuthenticated()" class="clsButton" id="del-image" ><img src="delete.png"></button>
+</form>
+ 
+    <div class="container">
+    <div class="down">
+        <h4>Твое<span >Расписание</span></h4>
+
+      <h2 class="hello">Добро пожаловать!</h2>
+      <div class="table-container">
+        <div class="inner">
+          <table>
+            <thead>
+              <tr>
+                <th></th>
+                <th>Описание</th>
+                <th>Дата</th>
+                <th>Действие</th>
+              </tr>
+            </thead>
+            <tbody>
+            <tr th:if="${todo.empty}">
+                <td class="text-center" colspan="4">Нет записей</td>
+            </tr>
+              <tr th:each="todo : ${todo}">
+                <td th:text="*{todo.id}">Row4</td>
+                <td th:text="${todo.description}">Info</td>
+                <td th:text="${todo.targetDate}">Info</td>
+                <td> <div class="test">
+                        <a class="editButton" id="close-image" th:href="@{/todo/{id}(id=${todo.id})}" ><img src="pencil.png"></a>
+                        <a class="delButton" id="del-image" th:href="@{/todo/delete/{id}(id=${todo.id})}"><img src="delete.png"></a>
+                </div> 
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="table__caption">
+          <h2 class="table__header">Ваше расписание</h2>
+          <a class="taskAdd"  id="ad-image" th:href="@{/todo/create}"><img src="plus.png"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

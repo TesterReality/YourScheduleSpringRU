@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org"
+       xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+	<title>ТвоеРасписание</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" media="all" href="/css/main.css" th:href="@{/css/main.css}" />
+
+</head>
+<body>
+<div class="animated bounceInDown">
+  <div sec:authorize="!isAuthenticated()" class="container">
+    <form name="form1" class="box" th:action="@{/register}" method="post" th:object="${user}">
+      <a th:href="@{/}">
+      <h4>Твое<span >Расписание</span></h4>
+      </a>
+      <h5>Зарегистрируйтесь в системе</h5>
+        <input type="text" th:field="*{userName}" placeholder="Логин" autocomplete="off">
+        <span class="error animated tada" id="msg" style="display: block;" th:each="err: ${#fields.errors('userName')}" th:text="${err}"></span>
+        <i class="typcn typcn-eye" id="eye"></i>
+        <input type="password" th:field="*{pswd}"name="password" placeholder="Пароль" id="password" autocomplete="off">
+        <span class="error animated tada" id="msg" style="display: block;" th:each="err: ${#fields.errors('pswd')}" th:text="${err}"></span>
+        <input type="password"th:field="*{matchingPswd}" name="password" placeholder="Повторите пароль" id="password1" autocomplete="off">
+        <span class="error animated tada" id="msg" style="display: block;" th:each="err: ${#fields.errors('matchingPswd')}" th:text="${err}"></span>
+        <input type="submit" value="Зарегистрироваться" class="btn1">
+      </form>
+        <a th:href="@{/login}" class="dnthave1">или войти в систему</a>
+  </div>
+
+    <div sec:authorize="isAuthenticated()" class="container1">
+        <form name="form1" class="box" th:action="@{/logout}" method="post">
+            <a th:href="@{/}">
+                <h4>Твое<span >Расписание</span></h4>
+            </a>
+            <h5>Вы уже зарегистрированы!</h5>
+            <button class="btn2">Выйти</button>
+        </form>
+        <a th:href="@{/}" class="dnthave3"> или вернуться к расписанию</a>
+
+    </div>
+       <div class="footer">
+      <span>Разработал:<a href="https://www.google.de/maps/place/Augsburger+Puppenkiste/@48.360357,10.903245,17z/data=!3m1!4b1!4m2!3m1!1s0x479e98006610a511:0x73ac6b9f80c4048f"><a href="https://codepen.io/lordgamer2354"> Владислав Вязмин</a></span>
+    </div>
+</div>
+</body>
+</html>

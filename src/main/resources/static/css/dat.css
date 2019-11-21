@@ -1,0 +1,285 @@
+/*change this values for default color scheme*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.hello{
+  text-align: center;
+  font-family: inherit;
+  font-size: 1.5em;
+  font-weight: 300;
+}
+body {
+  font-family: "Josefin Sans", "Segoe UI", Arial, sans-serif;
+  font-size: 100%;
+  font-weight: 300;
+  line-height: 1.5;
+  color: #ccd1dd;/*текст в колонке*/
+  background-color: #1d243d;/*цвет фона*/
+  min-height: 100%;
+  min-height: 100vh;
+  position: relative;
+}
+.table-container {
+  position: relative;
+  top: 5rem;
+  width: 100%;
+  max-width: 800px;
+  min-width: 500px;
+  margin: 0 auto 5em;
+}
+.table-container .inner {
+ /*padding: 0 .8em;
+ */
+  background-color: #3b414e;
+  border-radius: 0.6em;
+  overflow: hidden;
+  box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.2);
+}
+.table-container table {
+  table-layout: fixed;
+  border-collapse: collapse;
+  width: 100%;
+  text-align: left;
+  background-color: #3b414e;/*цвет таблицы*/
+  overflow: hidden;
+}
+.table-container table tbody, .table-container table thead {
+  padding: 0 1em;
+}
+.table-container table tr:not(:last-child) {
+  border-bottom: 1px solid #464c59;
+}
+.table-container tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.table-container thead tr {
+  border-bottom: 1px solid #464c59;
+}
+.table-container thead th {
+  padding: 4em 1em 1em;
+}
+.table-container th, .table-container td {
+  
+  padding: 0.6em 1em;
+  word-break: break-all;
+}
+.table-container.one tr:not(:last-child) {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+.table-container.one thead tr {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+.test{
+  display: flex;
+
+}
+.table__caption {
+  display: flex;
+  position: absolute;
+  top: -2em;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  margin: 0 auto;
+  max-width: 95%;
+  padding: 0.6em 1em;
+  border-radius: 0.6em;
+  background-color: #3b414e;/*цвет шапки*/
+  box-shadow: 0 5px 13px rgba(0, 0, 0, .4);
+}
+.table__header {
+  font-family: inherit;
+  font-size: 1.5em;
+  font-weight: 300;
+}
+.table__header--sub {
+  font-size: 0.9em;
+}
+
+.btns button {
+  display: block;
+  margin: auto;
+}
+.btns button:nth-child(2) {
+  margin: 40px auto;
+}
+.btn-submit, .btn-cancel, .btn-save {
+  border-radius: 14px;
+  position: absolute;
+  height: 50px;
+  line-height: 50px;
+  width: 175px;
+  color: #fff;
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  border: none;
+  outline: none;
+  font-size: 1.05em;
+  margin-top: 20px;
+
+  margin: 0 0 0 auto;
+}
+.btn-submit {
+  background: rgba(30, 179, 57, 0.75);
+}
+.btn-submit:hover, .btn-submit:focus {
+  background: #1eb339;
+}
+.btn-cancel {
+  background: #da524e;
+}
+.btn-cancel:hover, .btn-cancel:focus {
+  background: #d52e2e;
+}
+.btn-save {
+  background: rgba(253, 130, 69, 0.75);
+}
+.btn-save:hover, .btn-save:focus {
+  background: #fd8245;
+}
+.taskAdd {
+  transition: all 0.3s ease-in-out;
+  width: 30px;
+  height: 30px;
+  background: #7f5feb;
+  color: white;
+  text-align: center;
+  font-size: 19px;
+  border-radius: 7.5px;
+  border: none;
+  outline: none;
+  will-change: transform;
+  margin: 0 0 0 auto;
+  display: block;
+  margin-top: 5px;
+}
+ .taskAdd:hover {
+  background: #5d33e6;
+  transform: scale(0.95);
+}
+.taskAdd:active {
+  transform: scale(0.9);
+}
+
+.editButton {
+  transition: all 0.3s ease-in-out;
+  width: 30px;
+  height: 30px;
+  background: #7f5feb;
+  color: white;
+  text-align: center;
+  font-size: 20px;
+  border-radius: 7.5px;
+  border: none;
+  outline: none;
+  will-change: transform;
+  margin: 0 0 0 0;
+  display: block;
+  margin-top: 5px;
+}
+ .editButton:hover {
+  background: #5d33e6;
+  transform: scale(0.95);
+}
+.editButton:active {
+  transform: scale(0.9);
+}
+
+#close-image img {
+    height: 17px;
+    width: 17px;
+}
+
+.delButton {
+  transition: all 0.3s ease-in-out;
+  width: 30px;
+  height: 30px;
+  background: #da524e  ;
+  color: white;
+  text-align: center;
+  font-size: 20px;
+  border-radius: 7.5px;
+  border: none;
+  outline: none;
+  will-change: transform;
+  margin: 0 0 0 0;
+  display: block;
+  margin-top: 5px;
+  margin-left: 5px;
+
+}
+ .delButton:hover {
+  background: #ca2d28;
+  transform: scale(0.95);
+}
+.delButton:active {
+  transform: scale(0.9);
+}
+
+#del-image img {
+  height: 15px;
+  width: 15px;
+}
+
+.testor{
+  margin: 0 0 0 auto;
+}
+.clsButton {
+  transition: all 0.3s ease-in-out;
+  width: 30px;
+  height: 30px;
+  background: #da524e  ;
+  color: white;
+  text-align: center;
+  font-size: 24px;
+  border-radius: 7.5px;
+  border: none;
+  outline: none;
+  will-change: transform;
+  display: inline-block;
+  position: absolute;
+  margin-left: 95%;
+  margin-top: 40px;
+
+}
+ .clsButton:hover {
+  background: #ca2d28;
+  transform: scale(0.95);
+}
+.clsButton:active {
+  transform: scale(0.9);
+}
+
+.down{
+  margin-top: 80px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.down h4 {
+  text-align: center;
+  font-family: inherit;
+  font-size: 1.5em;
+  color: #5c6bc0; 
+}
+
+.down h4 span {
+  color: #dfdeee;
+  font-weight: lighter;
+}
+
+#ad-image img {
+  height: 17px;
+  width: 17px;
+  padding-top: 3px;
+}

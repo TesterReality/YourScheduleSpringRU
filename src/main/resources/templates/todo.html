@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+	<title>Добавление записи</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" th:href="@{/css/todo.css}" type="text/css" href="/css/todo.css">
+</head>
+<body>
+<div class="animated bounceInDown">
+  <div class="container">
+    <span class="error animated tada" id="msg"></span>
+    <form name="form1" class="box" th:action="@{/todo/create}" th:object="${todo}" method="post">
+      <h4>Твое<span>Расписание</span></h4>
+      <h5>Добавление новой записи</h5>
+        <input type="hidden" th:field="*{id}">
+
+        <input type="date" placeholder="Логин" autocomplete="off" id="target-date" th:field="*{targetDate}" >
+      <small class="text-danger" th:each="err: ${#fields.errors('targetDate')}" th:text="${err}"></small>
+
+      <i class="typcn typcn-eye" id="eye"></i>
+        <input type="text" th:field="*{description}" class="textBase"id="description"  rows="6" placeholder="Введите напоминание">
+      <small class="text-danger" th:each="err: ${#fields.errors('description')}" th:text="${err}"></small>
+
+      <button type="submit"  class="btn2">Создать запись </button>
+      </form>
+        <a th:href="@{/}" class="dnthave">или вернуться</a>
+  </div> 
+       <div class="footer">
+      <span>Разработал:<a href="https://www.google.de/maps/place/Augsburger+Puppenkiste/@48.360357,10.903245,17z/data=!3m1!4b1!4m2!3m1!1s0x479e98006610a511:0x73ac6b9f80c4048f"><a href="https://codepen.io/lordgamer2354"> Владислав Вязмин</a></span>
+    </div>
+</div>
+</body>
+</html>

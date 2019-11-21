@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org"
+       xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+	<title>ТвоеРасписание</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" type="text/css" media="all" href="/css/main.css" th:href="@{/css/main.css}" />
+
+</head>
+<body>
+<div class="animated bounceInDown">
+  <div sec:authorize="!isAuthenticated()" class="container">
+
+    <form name="form1" class="box" th:action="@{/authenticateTheUser}" method="post">
+      <a th:href="@{/}">
+      <h4>Твое<span >Расписание</span></h4>
+      </a>
+      <h5>Войдите в Ваш аккаунт</h5>
+      <input type="text" placeholder="Логин" autocomplete="off" id="username" name="username">
+      <span class="error animated tada" id="msg" style="display: block;" th:if="${param.error != null}">Неверный Логин или пароль</span>
+      <i class="typcn typcn-eye" id="eye"></i>
+        <input type="password" name="password" placeholder="Пароль" id="password" autocomplete="off">
+      
+        <input type="submit" value="Войти" class="btn1">
+      <a th:href="@{/register}" class="dnthave">или Зарегистрироваться</a>
+    </form>
+  </div>
+
+  <div sec:authorize="isAuthenticated()" class="container1">
+    <form name="form1" class="box" th:action="@{/logout}" method="post">
+      <a th:href="@{/}">
+        <h4>Твое<span >Расписание</span></h4>
+      </a>
+      <h5>Вы уже авторизовались!</h5>
+      <button class="btn2">Выйти</button>
+    </form>
+    <a th:href="@{/}" class="dnthave3"> или вернуться к расписанию</a>
+
+  </div>
+
+  <div class="footer">
+      <span>Разработал:<a href="https://www.google.de/maps/place/Augsburger+Puppenkiste/@48.360357,10.903245,17z/data=!3m1!4b1!4m2!3m1!1s0x479e98006610a511:0x73ac6b9f80c4048f"><a href="https://codepen.io/lordgamer2354"> Владислав Вязмин</a></span>
+    </div>
+</div>
+</body>
+</html>
