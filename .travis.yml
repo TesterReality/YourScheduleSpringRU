@@ -1,6 +1,10 @@
 language: java
 jdk: openjdk8
 
-script:
-- mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
-- mvn test -B
+env:
+  - MAVEN_VERSION=4.0.0
+
+install:
+    - mvn -N io.takari:maven:wrapper -Dmaven=${MAVEN_VERSION}
+    - ./mvnw --show-version --errors --batch-mode test-compile dependency:go-offline
+  script: ./mvnw --show-version --errors --batch-mode -Prun-its clean verify
