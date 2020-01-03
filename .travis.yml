@@ -3,5 +3,5 @@ jdk: openjdk8
 deploy:
  provider: heroku
  api-key:
-  secure: $HEROKU_API_KEY
+  secure: 0a47ec9f-7d68-4bbe-835f-51fac74cbc17
  app: YourScheduleSpringRU
