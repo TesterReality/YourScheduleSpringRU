@@ -7,6 +7,10 @@ install:
 - ./mvnw install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
 before_install:
   - chmod +x mvnw
+addons:
+  postgresql: "9.5" // change "9.5" for your postgres specific version
+services:
+  - postgresql
 deploy:
  provider: heroku
  api-key:
