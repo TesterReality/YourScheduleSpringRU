@@ -1,8 +1,7 @@
 language: java
-sudo: false
-dist: xenial
+sudo: true
+dist: trusty
 jdk: openjdk8
-
 install:
 - true
 - ./mvnw install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
